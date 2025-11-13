@@ -7,4 +7,7 @@ public abstract class RobotMap {
     public static final int TEST_CONTROLLER_ID = 2;
     public static final int LEFT_CIM_ID = 0;
     public static final int RIGHT_CIM_ID = 0;
+    public static final int CATAPULT_ID = 0;
+    public static final int LIMIT_SWITCH_ID = 0;
+
 }

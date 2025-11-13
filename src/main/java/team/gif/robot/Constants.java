@@ -14,5 +14,5 @@ package team.gif.robot;
  */
 public final class Constants {
 
-
+    public static final double CATAPULT_PERCENT =  1;
 }

@@ -2,38 +2,36 @@ package team.gif.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
+import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class AutosLeave extends Command {
+public class AutosDump extends Command {
 
-    public AutosLeave() {
+    public AutosDump() {
         super();
-        addRequirements(Robot.driveTrain);
-
+        addRequirements(Robot.catapult);
         //addRequirements(Robot.climber); // uncomment
     }
-private double matchTime;
+private double matchTime = Timer.getFPGATimestamp();
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
-        matchTime = Timer.getFPGATimestamp();
-    }
+    public void initialize() {}
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.driveTrain.driveArcade(.5, 0);
+        Robot.catapult.turnMotor(-Constants.CATAPULT_PERCENT);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override
     public boolean isFinished() {
-        return matchTime < 13;
+        return matchTime > 75;
     }
 
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.driveTrain.driveArcade(0, 0);
+        Robot.catapult.turnMotor(0);
     }
 }
