@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.lib.logging.EventFileLogger;
 import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.subsystems.Catapult;
+import team.gif.robot.subsystems.LimitSwitch;
+
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -25,7 +27,7 @@ public class Robot extends TimedRobot {
     public static Catapult catapult;
   public static OI oi;
   public static Pigeon pigeon;
-
+public static LimitSwitch limitSwitch;
   public static UI ui;
 
   public static final boolean enableSwerveDebug = false;
@@ -40,6 +42,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
     catapult = new Catapult();
+    limitSwitch = new LimitSwitch();
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
