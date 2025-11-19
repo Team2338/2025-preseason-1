@@ -15,21 +15,21 @@ import team.gif.robot.RobotMap;
 public class Catapult extends SubsystemBase {
     /** Creates a new ExampleSubsystem. */
     private TalonSRX catapult;
-    private final double catapultLow = 102.67;
-    private final double catapultHigh = 410.67;
+    //private final double catapultLow = 102.67;
+    //private final double catapultHigh = 410.67;
     /** Creates a new ExampleSubsystem. */
     public Catapult() {
         catapult = new TalonSRX(RobotMap.CATAPULT_ID);
         catapult.configFactoryDefault();
         catapult.setNeutralMode(NeutralMode.Brake);
-        catapult.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
+        /*catapult.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative);
         catapult.setSelectedSensorPosition(0);
         catapult.setSensorPhase(true);
-        //  catapult.configForwardSoftLimitThreshold(catapultLow);
-        //catapult.configReverseSoftLimitThreshold(catapultHigh);
-        // catapult.configForwardSoftLimitEnable(true);
-        //  catapult.configReverseSoftLimitEnable(true);
-
+        catapult.configForwardSoftLimitThreshold(catapultLow);
+        catapult.configReverseSoftLimitThreshold(catapultHigh);
+        catapult.configForwardSoftLimitEnable(true);
+        catapult.configReverseSoftLimitEnable(true);
+*/
     }
     public void turnMotor(double percentoutput){
         if ((Robot.limitSwitch.limitSwitch())){

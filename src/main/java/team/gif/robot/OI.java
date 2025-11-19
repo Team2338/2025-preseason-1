@@ -89,9 +89,9 @@ public class OI {
          * Simple Test:
          *   aX.onTrue(new PrintCommand("aX"));
          */
-dDPadDown.and(aDPadDown).onTrue(new InstantCommand(Robot.catapult::zeroEncoder));
-aA.onTrue(new CatapultDump());
-dB.onTrue(new CatapultUp());
+//dDPadDown.and(aDPadDown).onTrue(new InstantCommand(Robot.catapult::zeroEncoder));
+dA.whileTrue(new CatapultDump());
+dB.whileTrue(new CatapultUp());
 
     }
 }
